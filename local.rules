@@ -1,0 +1,11 @@
+# Local Rules File
+# Format: action proto src_ip src_port -> dst_ip dst_port (options)
+
+# Detect ICMP (Ping)
+alert icmp any any -> any any (msg:"ICMP Ping Detected"; sid:1001;)
+
+# Detect HTTP Traffic
+alert tcp any any -> any 80 (msg:"HTTP Traffic Detected"; sid:1002;)
+
+# Detect Suspicious Port 4444 (Metasploit default)
+alert tcp any any -> any 4444 (msg:"Suspicious Traffic on Port 4444"; sid:1003;)
